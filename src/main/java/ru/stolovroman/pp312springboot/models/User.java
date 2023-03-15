@@ -8,20 +8,15 @@ import jakarta.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-//    @Column
+    @Column
     private Long id;
-    @Column(name = "name", nullable = false, length = 25)
-//    @Column(nullable = false, length = 25)
+    @Column
     private String name;
-    @Column(name = "surname", nullable = false, length = 25)
-//    @Column(nullable = false, length = 25)
+    @Column
     private String surname;
-    @Column(name = "age", nullable = true)
-//    @Column
+    @Column
     private Byte age;
-    @Column(name = "email", nullable = true)
-//    @Column
+    @Column
     private String email;
 
     public User() {

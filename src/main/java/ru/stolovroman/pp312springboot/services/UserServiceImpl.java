@@ -38,8 +38,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void updateUser(Long id, User updatedUser) {
-        updatedUser.setId(id);
+    public void updateUser(User updatedUser) {
         peopleRepository.save(updatedUser);
     }
 

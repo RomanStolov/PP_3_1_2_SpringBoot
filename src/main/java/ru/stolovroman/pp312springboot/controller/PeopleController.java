@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/people")
 public class PeopleController {
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public PeopleController(UserService userService) {
@@ -76,8 +76,8 @@ public class PeopleController {
      * редирект на страницу со списком всех пользователей
      */
     @PatchMapping(value = "/{id}")
-    public String updateUser(@PathVariable("id") long id, @ModelAttribute("editUser") User newUser) {
-        userService.updateUser(id, newUser);
+    public String updateUser(@ModelAttribute("editUser") User newUser) {
+        userService.updateUser(newUser);
         return "redirect:/people";
     }
 
